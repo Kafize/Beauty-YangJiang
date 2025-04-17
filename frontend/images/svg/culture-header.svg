@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="400" viewBox="0 0 1920 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景渐变 -->
+    <defs>
+        <linearGradient id="headerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#E53935;stop-opacity:0.8"/>
+            <stop offset="100%" style="stop-color:#C62828;stop-opacity:0.9"/>
+        </linearGradient>
+        
+        <!-- 中国传统云纹图案 -->
+        <pattern id="cloudPattern" x="0" y="0" width="200" height="100" patternUnits="userSpaceOnUse">
+            <path d="M0,50 Q25,0 50,50 T100,50 T150,50 T200,50" 
+                  fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.1"/>
+        </pattern>
+    </defs>
+    
+    <!-- 背景矩形 -->
+    <rect width="100%" height="100%" fill="url(#headerGradient)"/>
+    
+    <!-- 云纹背景 -->
+    <rect width="100%" height="100%" fill="url(#cloudPattern)"/>
+    
+    <!-- 装饰性图案 -->
+    <g fill="#FFFFFF" opacity="0.1">
+        <!-- 中国结图案 -->
+        <path d="M200,100 L220,100 L220,120 L240,120 L240,140 L220,140 L220,160 L200,160 L200,140 L180,140 L180,120 L200,120 Z" />
+        <path d="M800,80 L820,80 L820,100 L840,100 L840,120 L820,120 L820,140 L800,140 L800,120 L780,120 L780,100 L800,100 Z" />
+        <path d="M1400,120 L1420,120 L1420,140 L1440,140 L1440,160 L1420,160 L1420,180 L1400,180 L1400,160 L1380,160 L1380,140 L1400,140 Z" />
+        
+        <!-- 祥云图案 -->
+        <path d="M100,200 C150,180 200,220 250,200 C300,180 350,220 400,200" 
+              fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.1"/>
+        <path d="M600,180 C650,160 700,200 750,180 C800,160 850,200 900,180" 
+              fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.1"/>
+        <path d="M1100,220 C1150,200 1200,240 1250,220 C1300,200 1350,240 1400,220" 
+              fill="none" stroke="#FFFFFF" stroke-width="3" opacity="0.1"/>
+              
+        <!-- 传统纹样 -->
+        <circle cx="300" cy="300" r="20" />
+        <circle cx="800" cy="280" r="15" />
+        <circle cx="1300" cy="320" r="25" />
+        <circle cx="1700" cy="290" r="18" />
+        
+        <!-- 装饰性线条 -->
+        <line x1="0" y1="350" x2="1920" y2="350" stroke="#FFFFFF" stroke-width="1" opacity="0.1"/>
+        <line x1="0" y1="360" x2="1920" y2="360" stroke="#FFFFFF" stroke-width="1" opacity="0.1"/>
+    </g>
+</svg> 

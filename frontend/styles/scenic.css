@@ -1,0 +1,270 @@
+/* 
+ * 景点页面样式
+ * 包含页面头部、景点卡片和响应式布局
+ */
+
+/* 页面头部样式 */
+.page-header {
+    background-size: cover;
+    background-position: center;
+    height: 50vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    padding-top: 80px;
+    position: relative;
+    margin: 0;
+}
+
+.page-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    animation: fadeInDown 0.5s ease;
+}
+
+.page-header p {
+    font-size: 1.5rem;
+    max-width: 600px;
+    margin-bottom: 2rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    animation: fadeInUp 0.5s ease;
+}
+
+/* 景点内容区域样式 */
+.scenic-section {
+    padding: 4rem 5%;
+    background-color: #f5f5f5;
+}
+
+.scenic-filter {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 3rem;
+}
+
+.filter-btn {
+    padding: 0.8rem 1.5rem;
+    background: none;
+    border: 2px solid #3498db;
+    color: #3498db;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 5px;
+}
+
+.filter-btn.active {
+    background-color: #3498db;
+    color: white;
+}
+
+.filter-btn:hover:not(.active) {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.scenic-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+}
+
+.scenic-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 3px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.scenic-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+}
+
+.scenic-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.scenic-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.scenic-card:hover .scenic-image img {
+    transform: scale(1.05);
+}
+
+.scenic-info {
+    padding: 1.5rem;
+}
+
+.scenic-info h3 {
+    color: #2c3e50;
+    font-size: 1.3rem;
+    margin-bottom: 0.8rem;
+}
+
+.scenic-location {
+    color: #3498db;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.scenic-location i {
+    font-size: 1rem;
+}
+
+.scenic-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+
+.scenic-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.scenic-price {
+    color: #e74c3c;
+    font-weight: 500;
+    font-size: 1.1rem;
+}
+
+.scenic-rating {
+    color: #f1c40f;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.view-details {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #3498db;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+.view-details:hover {
+    background-color: #2980b9;
+    transform: translateY(-2px);
+}
+
+.loading {
+    text-align: center;
+    padding: 2rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.error-message {
+    text-align: center;
+    color: #e74c3c;
+    padding: 1rem;
+    background: rgba(231, 76, 60, 0.1);
+    border-radius: 5px;
+    margin: 1rem 0;
+}
+
+.no-scenic {
+    text-align: center;
+    color: #666;
+    padding: 2rem;
+    font-size: 1.1rem;
+}
+
+/* 响应式设计 */
+@media screen and (max-width: 1024px) {
+    .scenic-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .page-header {
+        height: auto;
+        padding: 4rem 1rem;
+    }
+
+    .page-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .page-header p {
+        font-size: 1.2rem;
+    }
+
+    .scenic-filter {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .filter-btn {
+        padding: 0.6rem 1.2rem;
+        font-size: 0.9rem;
+    }
+
+    .scenic-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .scenic-image {
+        height: 200px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .page-header h1 {
+        font-size: 1.8rem;
+    }
+
+    .scenic-info h3 {
+        font-size: 1.2rem;
+    }
+
+    .view-details {
+        width: 100%;
+        text-align: center;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

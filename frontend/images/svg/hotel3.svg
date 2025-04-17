@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="600" viewBox="0 0 800 600" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <linearGradient id="sky" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#3498db;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#2980b9;stop-opacity:1" />
+        </linearGradient>
+        <linearGradient id="mountain" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#2c3e50;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#34495e;stop-opacity:1" />
+        </linearGradient>
+    </defs>
+    
+    <!-- 背景 -->
+    <rect width="100%" height="100%" fill="url(#sky)"/>
+    
+    <!-- 山脉 -->
+    <path d="M0,300 Q200,200 400,300 T800,300 L800,600 L0,600 Z" fill="url(#mountain)"/>
+    
+    <!-- 温泉建筑 -->
+    <rect x="200" y="250" width="400" height="150" fill="#e74c3c"/>
+    <rect x="250" y="200" width="300" height="50" fill="#e74c3c"/>
+    
+    <!-- 窗户 -->
+    <g fill="#f1c40f">
+        <rect x="220" y="270" width="60" height="40" rx="5"/>
+        <rect x="300" y="270" width="60" height="40" rx="5"/>
+        <rect x="380" y="270" width="60" height="40" rx="5"/>
+        <rect x="460" y="270" width="60" height="40" rx="5"/>
+    </g>
+    
+    <!-- 门 -->
+    <rect x="370" y="350" width="60" height="50" fill="#c0392b"/>
+    
+    <!-- 温泉池 -->
+    <circle cx="400" cy="450" r="100" fill="#3498db" opacity="0.8"/>
+    <circle cx="400" cy="450" r="80" fill="#2980b9" opacity="0.8"/>
+    
+    <!-- 蒸汽 -->
+    <g fill="#fff" opacity="0.3">
+        <circle cx="350" cy="420" r="10"/>
+        <circle cx="400" cy="410" r="15"/>
+        <circle cx="450" cy="420" r="10"/>
+    </g>
+</svg> 

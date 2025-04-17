@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文化特色 - 阳江旅游</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/culture.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">阳江旅游</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="scenic.html">景点</a>
+                <a href="activities.html">活动</a>
+                <a href="culture.html" class="active">文化</a>
+                <a href="booking.html">预订</a>
+                <a href="contact.html">联系我们</a>
+            </div>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="btn btn-outline">登录</button>
+                <button id="registerBtn" class="btn btn-primary">注册</button>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <section class="page-header" style="background: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('images/svg/culture-hero-bg.svg') center/cover;">
+            <div class="container">
+                <h1>阳江文化特色</h1>
+                <p>感受阳江独特的文化魅力</p>
+            </div>
+        </section>
+
+        <section class="culture-section">
+            <div class="container">
+                <div class="culture-grid">
+                    <article class="culture-card">
+                        <div class="culture-image">
+                            <img src="https://images.unsplash.com/photo-1515872474884-c6a1e5e08e27?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="渔家文化">
+                        </div>
+                        <div class="culture-content">
+                            <h2>渔家文化</h2>
+                            <p>阳江作为沿海城市，拥有丰富的渔家文化。渔民们世代以海为生，形成了独特的渔家生活方式和习俗，每年举办的渔家文化节，展示了传统的渔捞技艺，渔民作品和海鲜烹饪技法。</p>
+                        </div>
+                        <div class="culture-footer">
+                            <span class="culture-category">民俗文化</span>
+                            <div class="culture-actions">
+                                <button onclick="viewCultureDetail('fisherman')">了解更多</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="culture-card">
+                        <div class="culture-image">
+                            <img src="https://images.unsplash.com/photo-1529799954112-a7b486d12c11?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="传统工艺">
+                        </div>
+                        <div class="culture-content">
+                            <h2>传统工艺</h2>
+                            <p>阳江的传统工艺包括木雕、石雕、陶瓷等，其中以阳江木雕最为著名。这些工艺品不仅具有实用价值，更富含着丰富的文化内涵和艺术价值。</p>
+                        </div>
+                        <div class="culture-footer">
+                            <span class="culture-category">工艺文化</span>
+                            <div class="culture-actions">
+                                <button onclick="viewCultureDetail('craft')">了解更多</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="culture-card">
+                        <div class="culture-image">
+                            <img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="美食文化">
+                        </div>
+                        <div class="culture-content">
+                            <h2>美食文化</h2>
+                            <p>阳江的饮食文化独具特色，以海鲜美食为主，融合了粤式烹饪的精髓。从街边小吃到高档餐厅，都能品尝到阳江独特的美食风味。</p>
+                        </div>
+                        <div class="culture-footer">
+                            <span class="culture-category">饮食文化</span>
+                            <div class="culture-actions">
+                                <button onclick="viewCultureDetail('food')">了解更多</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="culture-card">
+                        <div class="culture-image">
+                            <img src="https://images.unsplash.com/photo-1531299983330-093763e1d963?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="节庆文化">
+                        </div>
+                        <div class="culture-content">
+                            <h2>节庆文化</h2>
+                            <p>阳江的传统节庆活动丰富多彩，包括元宵花灯会、端午龙舟赛等。这些节庆活动不仅传承了传统文化，也为现代生活增添了无限乐趣。</p>
+                        </div>
+                        <div class="culture-footer">
+                            <span class="culture-category">节庆活动</span>
+                            <div class="culture-actions">
+                                <button onclick="viewCultureDetail('festival')">了解更多</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="events-section">
+            <div class="container">
+                <h2>文化活动</h2>
+                <div class="events-grid">
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="day">15</span>
+                            <span class="month">6月</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>渔家文化节</h3>
+                            <p>体验传统渔家生活，品尝新鲜海鲜</p>
+                            <a href="activity-detail.html?id=1" class="event-link">了解更多</a>
+                        </div>
+                    </div>
+                    <div class="event-card">
+                        <div class="event-date">
+                            <span class="day">20</span>
+                            <span class="month">7月</span>
+                        </div>
+                        <div class="event-info">
+                            <h3>传统工艺展</h3>
+                            <p>展示阳江传统手工艺品</p>
+                            <a href="activity-detail.html?id=2" class="event-link">了解更多</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>阳江旅游致力于为您提供最佳的旅游体验，探索阳江的自然美景和文化遗产。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>电话：123-456-7890</p>
+                    <p>邮箱：info@yangjiang-tourism.com</p>
+                    <p>地址：广东省阳江市</p>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-links">
+                        <a href="#">微信</a>
+                        <a href="#">微博</a>
+                        <a href="#">抖音</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 阳江旅游. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 登录模态框 -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>用户登录</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">邮箱</label>
+                    <input type="email" id="loginEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">密码</label>
+                    <input type="password" id="loginPassword" name="password" required>
+                </div>
+                <button type="submit" class="submit-btn">登录</button>
+            </form>
+            <p class="switch-form">还没有账号？<a href="#" id="switchToRegister" onclick="showRegisterModal()">立即注册</a></p>
+        </div>
+    </div>
+
+    <!-- 注册模态框 -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>用户注册</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerUsername">用户名</label>
+                    <input type="text" id="registerUsername" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">邮箱</label>
+                    <input type="email" id="registerEmail" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">密码</label>
+                    <input type="password" id="registerPassword" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">确认密码</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" required>
+                </div>
+                <button type="submit" class="submit-btn">注册</button>
+            </form>
+            <p class="switch-form">已有账号？<a href="#" id="switchToLogin" onclick="showLoginModal()">立即登录</a></p>
+        </div>
+    </div>
+
+    <!-- 脚本 -->
+    <script src="scripts/mockData.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/culture.js"></script>
+</body>
+</html> 

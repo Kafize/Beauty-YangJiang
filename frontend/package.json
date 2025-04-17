@@ -1,0 +1,12 @@
+{
+  "name": "tourism-website-frontend",
+  "version": "1.0.0",
+  "description": "旅游网站前端",
+  "scripts": {
+    "dev": "live-server --port=3000 --open=index.html",
+    "build": "echo 'No build step required'"
+  },
+  "devDependencies": {
+    "live-server": "^1.2.2"
+  }
+}

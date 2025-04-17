@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1920" height="400" viewBox="0 0 1920 400" xmlns="http://www.w3.org/2000/svg">
+    <!-- 背景渐变 -->
+    <defs>
+        <linearGradient id="headerGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+            <stop offset="0%" style="stop-color:#3F51B5;stop-opacity:0.8"/>
+            <stop offset="100%" style="stop-color:#303F9F;stop-opacity:0.9"/>
+        </linearGradient>
+    </defs>
+    
+    <!-- 背景矩形 -->
+    <rect width="100%" height="100%" fill="url(#headerGradient)"/>
+    
+    <!-- 装饰性图案 -->
+    <g fill="#FFFFFF" opacity="0.1">
+        <!-- 灯笼图案 -->
+        <path d="M200,100 C200,50 300,50 300,100 L280,150 L220,150 Z"/>
+        <path d="M800,80 C800,30 900,30 900,80 L880,130 L820,130 Z"/>
+        <path d="M1400,120 C1400,70 1500,70 1500,120 L1480,170 L1420,170 Z"/>
+        
+        <!-- 飘带图案 -->
+        <path d="M0,200 Q200,150 400,200 T800,200 T1200,200 T1600,200 T1920,200" 
+              fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.1"/>
+        <path d="M0,250 Q200,200 400,250 T800,250 T1200,250 T1600,250 T1920,250" 
+              fill="none" stroke="#FFFFFF" stroke-width="2" opacity="0.1"/>
+              
+        <!-- 点缀的小星星 -->
+        <path d="M100,50 L110,70 L130,70 L115,85 L120,105 L100,95 L80,105 L85,85 L70,70 L90,70 Z" opacity="0.2"/>
+        <path d="M700,70 L710,90 L730,90 L715,105 L720,125 L700,115 L680,125 L685,105 L670,90 L690,90 Z" opacity="0.2"/>
+        <path d="M1300,60 L1310,80 L1330,80 L1315,95 L1320,115 L1300,105 L1280,115 L1285,95 L1270,80 L1290,80 Z" opacity="0.2"/>
+        <path d="M1700,80 L1710,100 L1730,100 L1715,115 L1720,135 L1700,125 L1680,135 L1685,115 L1670,100 L1690,100 Z" opacity="0.2"/>
+    </g>
+</svg> 

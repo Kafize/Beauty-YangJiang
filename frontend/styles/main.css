@@ -1,0 +1,564 @@
+/* 
+ * 阳江旅游网站主样式文件
+ * 包含全局样式、导航栏、英雄区域、卡片布局和响应式设计
+ */
+
+/* 全局样式重置和基础设置 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* 导航栏样式 */
+.navbar {
+    background-color: #fff;
+    padding: 1rem 5%;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.navbar.scrolled {
+    background-color: rgba(255, 255, 255, 0.95);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+.navbar .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Logo样式 */
+.logo {
+    color: #2c3e50;
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: bold;
+    flex-shrink: 0;
+}
+
+/* 导航链接样式 */
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    margin: 0 2rem;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2c3e50;
+    font-weight: 500;
+    transition: color 0.3s;
+    position: relative;
+    white-space: nowrap;
+}
+
+.nav-links a:hover,
+.nav-links a.active {
+    color: #3498db;
+}
+
+.nav-links a.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: #3498db;
+}
+
+/* 认证按钮样式 */
+.auth-buttons {
+    display: flex !important; /* 强制显示 */
+    gap: 1rem;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.auth-buttons .btn {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.auth-buttons .btn-outline {
+    background: transparent;
+    color: #3498db;
+    border: 1px solid #3498db;
+}
+
+.auth-buttons .btn-outline:hover {
+    background: #3498db;
+    color: #fff;
+}
+
+.auth-buttons .btn-primary {
+    background: #3498db;
+    color: #fff;
+    border: none;
+}
+
+.auth-buttons .btn-primary:hover {
+    background: #2980b9;
+}
+
+/* 用户名和退出按钮样式 */
+.auth-buttons .username {
+    color: #2c3e50;
+    font-weight: 500;
+    margin-right: 1rem;
+    white-space: nowrap;
+}
+
+.auth-buttons #logoutBtn {
+    background: transparent;
+    color: #e74c3c;
+    border: 1px solid #e74c3c;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+    font-weight: 500;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    white-space: nowrap;
+}
+
+.auth-buttons #logoutBtn:hover {
+    background: #e74c3c;
+    color: #fff;
+}
+
+/* 移动端菜单按钮 */
+.mobile-menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #2c3e50;
+    margin-left: 1rem;
+}
+
+@media (max-width: 768px) {
+    .navbar .container {
+        flex-wrap: wrap;
+    }
+
+    .mobile-menu-btn {
+        display: block;
+        order: 1;
+    }
+
+    .logo {
+        order: 0;
+    }
+
+    .nav-links {
+        display: none;
+        width: 100%;
+        order: 3;
+        margin: 1rem 0 0 0;
+        padding: 1rem 0;
+        flex-direction: column;
+        align-items: flex-start;
+        border-top: 1px solid #eee;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .auth-buttons {
+        order: 2;
+        margin-left: auto;
+    }
+
+    .auth-buttons .btn {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+
+    .auth-buttons .username {
+        font-size: 0.85rem;
+    }
+
+    .auth-buttons #logoutBtn {
+        padding: 0.4rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* 模态框样式 */
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+}
+
+.modal-content {
+    position: relative;
+    background: #fff;
+    margin: 10% auto;
+    padding: 2rem;
+    width: 90%;
+    max-width: 500px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.close {
+    position: absolute;
+    right: 1rem;
+    top: 1rem;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: #666;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    width: 100%;
+    padding: 0.75rem;
+    background: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.submit-btn:hover {
+    background: #2980b9;
+}
+
+.switch-form {
+    text-align: center;
+    margin-top: 1rem;
+    color: #666;
+}
+
+.switch-form a {
+    color: #3498db;
+    text-decoration: none;
+}
+
+.switch-form a:hover {
+    text-decoration: underline;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1rem;
+        flex-wrap: wrap;
+    }
+
+    .nav-links {
+        order: 3;
+        width: 100%;
+        margin-top: 1rem;
+        flex-direction: column;
+        display: none;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5rem 0;
+    }
+
+    .auth-buttons {
+        margin-left: auto;
+    }
+
+    .hero-content {
+        margin-top: 40px;
+    }
+}
+
+/* 移动端汉堡菜单按钮样式 */
+.burger {
+    display: none;
+    cursor: pointer;
+}
+
+.burger div {
+    width: 25px;
+    height: 3px;
+    background-color: #2c3e50;
+    margin: 5px;
+    transition: all 0.3s ease;
+}
+
+/* 英雄区域样式 */
+.hero {
+    height: 100vh;
+    background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%);
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    margin-bottom: 2rem;
+}
+
+.hero .container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.hero h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    animation: fadeIn 1s ease-in;
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in 0.5s both;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 内容区域通用样式 */
+main {
+    margin-top: 70px;
+    min-height: calc(100vh - 70px);
+}
+
+section {
+    padding: 4rem 0;
+}
+
+section h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+    color: #2c3e50;
+}
+
+/* 页脚样式 */
+.footer {
+    background-color: #2c3e50;
+    color: #fff;
+    padding: 3rem 0;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3 {
+    margin-bottom: 1rem;
+    font-size: 1.2rem;
+}
+
+.footer-section p {
+    margin-bottom: 0.5rem;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    section {
+        padding: 2rem 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero h1 {
+        font-size: 1.5rem;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* 响应式设计 - 平板设备 */
+@media screen and (max-width: 1024px) {
+    .hero h2 {
+        font-size: 2.5rem;
+    }
+
+    .spot-grid, .activity-grid {
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+}
+
+/* 响应式设计 - 移动设备 */
+@media screen and (max-width: 768px) {
+    /* 导航菜单移动端样式 */
+    .nav-links {
+        position: fixed;
+        right: -100%;
+        top: 80px;
+        height: calc(100vh - 80px);
+        background-color: #fff;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        transition: right 0.5s ease;
+    }
+
+    .nav-links.active {
+        right: 0;
+    }
+
+    .burger {
+        display: block;
+    }
+
+    /* 汉堡菜单动画 */
+    .burger.active .line1 {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .burger.active .line2 {
+        opacity: 0;
+    }
+
+    .burger.active .line3 {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    /* 移动端英雄区域调整 */
+    .hero {
+        height: 80vh;
+    }
+
+    .hero h2 {
+        font-size: 2rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .spot-card img, .activity-card img {
+        height: 180px;
+    }
+}
+
+/* 响应式设计 - 小屏幕移动设备 */
+@media screen and (max-width: 480px) {
+    .hero h2 {
+        font-size: 1.8rem;
+    }
+
+    .spot-grid, .activity-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr;
+    }
+
+    .spot-card img, .activity-card img {
+        height: 160px;
+    }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.hero-content {
+    animation: fadeIn 1s ease-in;
+}
+
+/* 滚动显示效果 */
+.scroll-reveal {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.scroll-reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+} 

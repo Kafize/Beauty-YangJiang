@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <!-- 基础设置 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>在线预订 - 阳江旅游</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌊</text></svg>">
+    
+    <!-- 样式表链接 -->
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/booking.css">
+    <link rel="stylesheet" href="styles/auth.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar">
+        <div class="container">
+            <a href="index.html" class="logo">阳江旅游</a>
+            <div class="nav-links">
+                <a href="index.html">首页</a>
+                <a href="scenic.html">景点</a>
+                <a href="activities.html">活动</a>
+                <a href="culture.html">文化</a>
+                <a href="booking.html" class="active">预订</a>
+                <a href="contact.html">联系我们</a>
+            </div>
+            <div class="auth-buttons">
+                <button id="loginBtn" class="btn btn-outline">登录</button>
+                <button id="registerBtn" class="btn btn-primary">注册</button>
+            </div>
+            <button class="mobile-menu-btn">☰</button>
+        </div>
+    </nav>
+
+    <main>
+        <!-- 页面头部 -->
+        <section class="page-header" style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('images/svg/booking-header.svg');">
+            <div class="container">
+                <h1>在线预订</h1>
+                <p>预订您的阳江之旅</p>
+                <div class="booking-stats">
+                    <div class="stat-item">
+                        <i class="fas fa-ticket-alt"></i>
+                        <span>景点门票</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-hotel"></i>
+                        <span>特色住宿</span>
+                    </div>
+                    <div class="stat-item">
+                        <i class="fas fa-percent"></i>
+                        <span>优惠折扣</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 预订标签页 -->
+        <section class="booking-tabs">
+            <div class="container">
+                <!-- 标签按钮 -->
+                <div class="tab-buttons">
+                    <button class="tab-button active" data-tab="tickets">
+                        <i class="fas fa-ticket-alt"></i>
+                        门票预订
+                    </button>
+                    <button class="tab-button" data-tab="hotels">
+                        <i class="fas fa-hotel"></i>
+                        酒店预订
+                    </button>
+                </div>
+
+                <!-- 标签内容区域 -->
+                <div class="tab-content">
+                    <!-- 门票预订标签页 -->
+                    <div class="tab-pane active" id="tickets">
+                        <div class="ticket-grid">
+                            <!-- 海陵岛门票卡片 -->
+                            <div class="ticket-card">
+                                <div class="card-badge">热门</div>
+                                <img src="images/svg/hailing-ticket.svg" alt="海陵岛门票">
+                                <div class="ticket-info">
+                                    <h3>海陵岛门票</h3>
+                                    <div class="price-tag">
+                                        <span class="price">¥120</span>
+                                        <span class="per">/人</span>
+                                    </div>
+                                    <div class="features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>包含岛上主要景点参观</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>免费导游讲解服务</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>景区接驳车服务</span>
+                                        </div>
+                                    </div>
+                                    <!-- 预订表单 -->
+                                    <div class="booking-form">
+                                        <form id="ticket-booking-form">
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="ticket-date">
+                                                        <i class="fas fa-calendar"></i>
+                                                        选择日期
+                                                    </label>
+                                                    <input type="date" id="ticket-date" name="visit-date" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="ticket-count">
+                                                        <i class="fas fa-user-friends"></i>
+                                                        人数
+                                                    </label>
+                                                    <div class="number-input">
+                                                        <button type="button" class="minus">-</button>
+                                                        <input type="number" id="ticket-count" name="ticket-quantity" min="1" value="1" required>
+                                                        <button type="button" class="plus">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="ticket-name" value="海陵岛门票">
+                                            <input type="hidden" id="ticket-price" value="120">
+                                            <button type="submit" class="book-now">
+                                                <i class="fas fa-shopping-cart"></i>
+                                                立即预订
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 温泉门票卡片 -->
+                            <div class="ticket-card">
+                                <div class="card-badge special">特惠</div>
+                                <img src="images/svg/spring-ticket.svg" alt="温泉门票">
+                                <div class="ticket-info">
+                                    <h3>温泉门票</h3>
+                                    <div class="price-tag">
+                                        <span class="price">¥180</span>
+                                        <span class="per">/人</span>
+                                        <span class="original-price">¥220</span>
+                                    </div>
+                                    <div class="features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>温泉无限次浸泡</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>专业SPA服务</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-check"></i>
+                                            <span>休息室使用</span>
+                                        </div>
+                                    </div>
+                                    <!-- 预订表单 -->
+                                    <div class="booking-form">
+                                        <form id="spring-booking-form">
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="spring-date">
+                                                        <i class="fas fa-calendar"></i>
+                                                        选择日期
+                                                    </label>
+                                                    <input type="date" id="spring-date" name="visit-date" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="spring-count">
+                                                        <i class="fas fa-user-friends"></i>
+                                                        人数
+                                                    </label>
+                                                    <div class="number-input">
+                                                        <button type="button" class="minus">-</button>
+                                                        <input type="number" id="spring-count" name="ticket-quantity" min="1" value="1" required>
+                                                        <button type="button" class="plus">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="spring-ticket-name" name="ticket-name" value="温泉门票">
+                                            <input type="hidden" id="spring-ticket-price" name="ticket-price" value="180">
+                                            <button type="submit" class="book-now">
+                                                <i class="fas fa-shopping-cart"></i>
+                                                立即预订
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 酒店预订标签页 -->
+                    <div class="tab-pane" id="hotels">
+                        <div class="hotel-grid">
+                            <!-- 海景酒店卡片 -->
+                            <div class="hotel-card">
+                                <div class="card-badge">推荐</div>
+                                <div class="image-gallery">
+                                    <img src="images/svg/hotel1.svg" alt="海景酒店">
+                                    <div class="gallery-nav">
+                                        <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                                        <button class="next"><i class="fas fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="hotel-info">
+                                    <div class="hotel-header">
+                                        <h3>海景酒店</h3>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star-half-alt"></i>
+                                            <span>4.5/5</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-tag">
+                                        <span class="price">¥380</span>
+                                        <span class="per">/晚起</span>
+                                    </div>
+                                    <div class="features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-umbrella-beach"></i>
+                                            <span>海景房，步行可达海滩</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-wifi"></i>
+                                            <span>免费WiFi</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-parking"></i>
+                                            <span>免费停车</span>
+                                        </div>
+                                    </div>
+                                    <!-- 预订表单 -->
+                                    <div class="booking-form">
+                                        <form id="hotel-booking-form">
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="check-in-date">
+                                                        <i class="fas fa-calendar"></i>
+                                                        入住日期
+                                                    </label>
+                                                    <input type="date" id="check-in-date" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="check-out-date">
+                                                        <i class="fas fa-calendar"></i>
+                                                        退房日期
+                                                    </label>
+                                                    <input type="date" id="check-out-date" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="room-count">
+                                                        <i class="fas fa-bed"></i>
+                                                        房间数
+                                                    </label>
+                                                    <div class="number-input">
+                                                        <button type="button" class="minus">-</button>
+                                                        <input type="number" id="room-count" min="1" value="1" required>
+                                                        <button type="button" class="plus">+</button>
+                                                    </div>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="guest-count">
+                                                        <i class="fas fa-user-friends"></i>
+                                                        入住人数
+                                                    </label>
+                                                    <div class="number-input">
+                                                        <button type="button" class="minus">-</button>
+                                                        <input type="number" id="guest-count" min="1" value="1" required>
+                                                        <button type="button" class="plus">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="hotel-name" value="海景酒店">
+                                            <input type="hidden" id="hotel-price" value="688">
+                                            <button type="submit" class="book-now">
+                                                <i class="fas fa-shopping-cart"></i>
+                                                立即预订
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- 温泉度假酒店卡片 -->
+                            <div class="hotel-card">
+                                <div class="card-badge luxury">豪华</div>
+                                <div class="image-gallery">
+                                    <img src="images/svg/hotel2.svg" alt="温泉度假酒店">
+                                    <div class="gallery-nav">
+                                        <button class="prev"><i class="fas fa-chevron-left"></i></button>
+                                        <button class="next"><i class="fas fa-chevron-right"></i></button>
+                                    </div>
+                                </div>
+                                <div class="hotel-info">
+                                    <div class="hotel-header">
+                                        <h3>温泉度假酒店</h3>
+                                        <div class="rating">
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <i class="fas fa-star"></i>
+                                            <span>5.0/5</span>
+                                        </div>
+                                    </div>
+                                    <div class="price-tag">
+                                        <span class="price">¥580</span>
+                                        <span class="per">/晚起</span>
+                                    </div>
+                                    <div class="features">
+                                        <div class="feature-item">
+                                            <i class="fas fa-hot-tub"></i>
+                                            <span>豪华温泉套房</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-utensils"></i>
+                                            <span>免费自助早餐</span>
+                                        </div>
+                                        <div class="feature-item">
+                                            <i class="fas fa-spa"></i>
+                                            <span>SPA服务</span>
+                                        </div>
+                                    </div>
+                                    <!-- 温泉度假酒店预订表单 -->
+                                    <div class="booking-form">
+                                        <form id="spa-hotel-booking-form">
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="hotel-check-in">
+                                                        <i class="fas fa-calendar-check"></i>
+                                                        入住日期
+                                                    </label>
+                                                    <input type="date" id="hotel-check-in" name="check-in-date" required>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="hotel-check-out">
+                                                        <i class="fas fa-calendar-times"></i>
+                                                        退房日期
+                                                    </label>
+                                                    <input type="date" id="hotel-check-out" name="check-out-date" required>
+                                                </div>
+                                            </div>
+                                            <div class="form-row">
+                                                <div class="form-group">
+                                                    <label for="hotel-room-type">
+                                                        <i class="fas fa-bed"></i>
+                                                        房间类型
+                                                    </label>
+                                                    <select id="hotel-room-type" name="room-type" required>
+                                                        <option value="standard">标准温泉房</option>
+                                                        <option value="deluxe">豪华温泉套房</option>
+                                                        <option value="villa">温泉别墅</option>
+                                                    </select>
+                                                </div>
+                                                <div class="form-group">
+                                                    <label for="hotel-guests">
+                                                        <i class="fas fa-user-friends"></i>
+                                                        入住人数
+                                                    </label>
+                                                    <div class="number-input">
+                                                        <button type="button" class="minus">-</button>
+                                                        <input type="number" id="hotel-guests" name="guest-count" min="1" value="2" required>
+                                                        <button type="button" class="plus">+</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <input type="hidden" id="spa-hotel-name" name="hotel-name" value="温泉度假酒店">
+                                            <input type="hidden" id="spa-hotel-price" name="hotel-price" value="580">
+                                            <button type="submit" class="book-now">
+                                                <i class="fas fa-shopping-cart"></i>
+                                                立即预订
+                                            </button>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 预订记录区域 -->
+        <section class="booking-records">
+            <div class="container">
+                <h2>我的预订记录</h2>
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">全部</button>
+                    <button class="filter-btn" data-filter="ticket">门票</button>
+                    <button class="filter-btn" data-filter="hotel">酒店</button>
+                </div>
+                <div id="bookings-list" class="bookings-grid">
+                    <!-- 预订记录将通过JavaScript动态加载 -->
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- 页脚区域 -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>关于我们</h3>
+                    <p>阳江旅游致力于为您提供最佳的旅游体验，探索阳江的自然美景和文化遗产。</p>
+                </div>
+                <div class="footer-section">
+                    <h3>联系方式</h3>
+                    <p>电话：123-456-7890</p>
+                    <p>邮箱：info@yangjiang-tourism.com</p>
+                    <p>地址：广东省阳江市</p>
+                </div>
+                <div class="footer-section">
+                    <h3>关注我们</h3>
+                    <div class="social-links">
+                        <a href="#">微信</a>
+                        <a href="#">微博</a>
+                        <a href="#">抖音</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 阳江旅游. 保留所有权利.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 登录模态框 -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>登录</h2>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="loginEmail">邮箱</label>
+                    <input type="email" id="loginEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="loginPassword">密码</label>
+                    <input type="password" id="loginPassword" required>
+                </div>
+                <div class="form-error"></div>
+                <button type="submit" class="btn btn-primary">登录</button>
+                <p class="form-switch">
+                    还没有账号？<a href="#" id="switchToRegister">立即注册</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- 注册模态框 -->
+    <div id="registerModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>注册</h2>
+            <form id="registerForm">
+                <div class="form-group">
+                    <label for="registerUsername">用户名</label>
+                    <input type="text" id="registerUsername" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerEmail">邮箱</label>
+                    <input type="email" id="registerEmail" required>
+                </div>
+                <div class="form-group">
+                    <label for="registerPassword">密码</label>
+                    <input type="password" id="registerPassword" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirmPassword">确认密码</label>
+                    <input type="password" id="confirmPassword" required>
+                </div>
+                <div class="form-error"></div>
+                <button type="submit" class="btn btn-primary">注册</button>
+                <p class="form-switch">
+                    已有账号？<a href="#" id="switchToLogin">立即登录</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript文件 -->
+    <script src="scripts/mockData.js"></script>
+    <script src="scripts/api.js"></script>
+    <script src="scripts/main.js"></script>
+    <script src="scripts/auth.js"></script>
+    <script src="scripts/booking.js"></script>
+</body>
+</html> 
